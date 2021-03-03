@@ -8,12 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
+@Entity
 public class Joke {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String text;
 	private int rating;
+	@Temporal(TemporalType.DATE)
 	private Date date;
 	
 	public long getId() {
